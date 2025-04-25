@@ -1,0 +1,82 @@
+.pageContainer {
+  min-height: calc(100vh - 100px); /* Adjust based on actual header/footer */
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex-grow: 1;
+}
+
+.contactSection {
+  padding: 4rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--card-background); /* Restore background */
+  border-radius: 8px; /* Restore border-radius */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center; /* Center align content */
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.contactInfo p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.emailLink {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.emailLink:hover {
+  background-color: rgba(var(--primary-color-rgb, 52, 152, 219), 0.1); /* Faint primary color background */
+  text-decoration: underline;
+}
+
+.otherContact {
+  margin-top: 2.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+/* Reuse social link styles from Hero, maybe move to globals later */
+.socialLinks {
+  display: flex;
+  gap: 1.5rem; 
+  align-items: center;
+  justify-content: center; /* Center links */
+  margin-top: 1rem;
+}
+
+.socialLink {
+  color: var(--foreground);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+} 

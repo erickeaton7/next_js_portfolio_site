@@ -1,0 +1,76 @@
+.skills {
+  padding: 4rem 2rem;
+  text-align: center;
+  /* background-color: var(--background); */ /* Remove main background */
+  background-color: var(--card-background); /* Use card background */
+  border-bottom: 1px solid var(--border-color); /* Restore border */
+}
+
+.sectionTitle {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 3rem; /* Increase spacing */
+  color: var(--foreground);
+}
+
+.categoriesContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Increase gap */
+}
+
+.category {
+  text-align: left;
+}
+
+.categoryTitle {
+  font-size: 1.6rem; /* Adjust size */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color); /* Use primary color */
+  /* border-bottom: 2px solid #2c3e50; */ /* Remove old border */
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  position: relative;
+}
+
+/* Optional: Add a subtle underline effect */
+.categoryTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px; /* Short underline */
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.8rem; /* Adjust gap */
+}
+
+.item {
+  background-color: var(--primary-color); /* Use primary color background */
+  color: white; /* White text */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: none;
+  border: none; /* Remove border */
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.item:hover {
+  /* background-color: var(--card-background); */ /* Remove card background */
+  background-color: var(--skill-hover-bg); /* Use the new hover variable */
+  transform: translateY(-2px);
+} 

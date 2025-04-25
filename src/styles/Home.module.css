@@ -1,168 +1,127 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+/* Remove or comment out styles related to the old default page content */
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+.pageContainer {
+  /* Optional: Add padding/margin if needed for the overall page container */
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
+.mainContent {
+  /* Optional: Add styling specific to the main content area */
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+.ctaSection {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  margin-top: 0;
+  /* Remove border-top if it exists */
+  /* border-top: 1px solid var(--border-color); */ 
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
+.ctaSection h2 {
+  font-size: 2rem;
   font-weight: 600;
+  margin-bottom: 1rem;
+  color: white; /* Ensure heading is white */
 }
 
-.ctas {
-  display: flex;
-  gap: 16px;
+.ctaSection p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  max-width: 600px; /* Limit width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
+.ctaButtons {
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  gap: 1.5rem; /* Increase gap */
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+/* Combined Button Styles */
+.ctaButton, .ctaButtonPrimary {
+  padding: 0.9rem 2rem; 
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* background-color: var(--border-color); */ /* Remove Border Color */
+  background-color: var(--skill-hover-bg); /* Use Skill Hover Color for base */
+  color: var(--foreground-dark);
+  display: inline-block;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
+/* Remove individual .ctaButton base style */
+/*
+.ctaButton {
+  background-color: transparent; 
+  color: var(--foreground); 
+  border: 1px solid var(--border-color);
 }
+*/
+
+/* Combined Hover Styles */
+.ctaButton:hover, .ctaButtonPrimary:hover {
+  /* background-color: var(--card-background); */ /* Keep Dark Card Background for hover */
+  background-color: var(--card-background);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: var(--foreground-dark);
+}
+
+/* Remove individual hover styles */
+/*
+.ctaButton:hover {
+  background-color: var(--button-secondary-hover); 
+  border-color: var(--button-secondary-hover); 
+  color: var(--foreground-dark); 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+*/
+
+/*
+.ctaButtonPrimary {
+  background-color: var(--secondary-color); 
+  color: white;
+}
+*/
+
+/*
+.ctaButtonPrimary:hover {
+  background-color: var(--button-primary-hover); 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+*/
 
 .footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  margin-top: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  /* background-color: #e9ecef; */ /* Remove light background */
+  background-color: var(--background-dark); /* Use main dark background */
+  border-top: 1px solid var(--border-color);
 }
 
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* Comment out or remove old styles like .page, .main, .logo, .ctas, etc. */
+/*
+.page {
+  ...
 }
-
-.footer img {
-  flex-shrink: 0;
+.main {
+  ...
 }
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
+.logo {
+  ...
 }
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
+.ctas {
+ ...
 }
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-}
+*/

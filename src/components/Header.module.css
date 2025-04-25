@@ -1,0 +1,119 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* background-color: #2c3e50; */ /* Remove old color */
+  background-color: var(--background-dark); /* Use main dark background */
+  color: var(--foreground); /* Use global foreground color */
+  font-family: var(--font-montserrat), sans-serif;
+  border-bottom: 1px solid var(--border-color); /* Add subtle border */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */ /* Remove shadow for seamless look */
+  position: relative; /* Needed for absolute positioning of mobile nav */
+  z-index: 100; /* Ensure header is above other content */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700; /* Bolder logo */
+  color: var(--primary-color); /* Logo in primary color - Check contrast */
+  /* Or use foreground: color: var(--foreground); */
+  /* font-family: 'Brush Script MT', 'cursive'; */ /* Remove old font */
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Desktop Nav Styles */
+.nav {
+  display: flex; /* Default display for desktop */
+}
+
+.nav a {
+  color: var(--foreground); /* Should be light on dark background */
+  text-decoration: none;
+  margin-left: 1.8rem; /* Slightly more spacing */
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative; /* For underline effect */
+  transition: color 0.2s ease;
+}
+
+/* Remove complex hover effect for simplicity */
+/* .nav a::after { ... } */
+
+.nav a:hover {
+  color: var(--primary-color); /* Change color on hover */
+  text-decoration: none; /* Remove default underline */
+}
+
+/* Hamburger Button Styles - Hidden by default */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 21px; /* 3 lines * 3px + 2 gaps * 6px */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110; /* Above header content */
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+.hamburgerLine {
+  width: 30px;
+  height: 3px;
+  background-color: var(--foreground);
+  border-radius: 10px;
+  transition: all 0.3s linear;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Hide desktop nav */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below header */
+    left: 0;
+    width: 100%;
+    background-color: var(--background-dark); /* Match header */
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 0; /* Padding for mobile nav */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .navOpen {
+    display: flex; /* Show mobile nav when open */
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav a {
+    margin: 0;
+    padding: 1rem 2rem; /* Full width links */
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+  }
+  
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
+} 

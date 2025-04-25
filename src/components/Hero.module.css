@@ -1,0 +1,80 @@
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 3rem; /* Increase padding */
+  /* background-color: #e0e0e0; */ /* Remove old background */
+  background-color: var(--card-background); /* Use card background */
+  text-align: left;
+  min-height: auto; /* Remove min-height, let content define */
+  flex-wrap: wrap;
+  gap: 3rem; /* Increase gap */
+  border-bottom: 1px solid var(--border-color); /* Restore border */
+}
+
+.content {
+  max-width: 600px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.name {
+  font-size: 3.5rem; /* Slightly larger name */
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--foreground); /* Use foreground color */
+  /* font-family: var(--font-geist-sans), sans-serif; */ /* Remove explicit font */
+}
+
+.title {
+  font-size: 2rem; /* Larger title */
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color); /* Title in primary color */
+}
+
+.tagline {
+  font-size: 1.15rem; /* Adjust tagline size */
+  color: var(--text-muted); /* Use muted text color */
+  line-height: 1.7; /* Increase line height */
+  margin-bottom: 2rem; /* Add margin below tagline */
+}
+
+/* Styles for optional image (if added later) */
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImage {
+  border-radius: 50%;
+  width: 280px; /* Adjust size */
+  height: 280px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Enhance shadow */
+  border: 4px solid var(--card-background); /* Optional: Add border */
+}
+
+/* Styles for Social Links */
+.socialLinks {
+  display: flex;
+  gap: 1.5rem; /* Space between links */
+  align-items: center;
+}
+
+.socialLink {
+  color: var(--foreground); /* Match text color */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-flex; /* Align icon/text if icons are added */
+  align-items: center;
+  gap: 0.5rem; /* Space between icon and text */
+  transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+  color: var(--primary-color); /* Hover color */
+  text-decoration: underline;
+} 
